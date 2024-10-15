@@ -13,11 +13,6 @@ public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
     }
 
-    private static final UserDaoJDBCImpl INSTANCE = new UserDaoJDBCImpl();
-    public static UserDaoJDBCImpl getInstance() {
-        return INSTANCE;
-    }
-
     public void createUsersTable() {
         try (Connection connection = Util.getMySQLConnection();
              Statement statement = connection.createStatement()) {
